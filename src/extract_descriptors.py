@@ -30,6 +30,8 @@ def extract_surf(path, hessian=50, octave=4, octaveLayers=2, ext=False):
     return kp,des
 
 def matcher(kp1, kp2, des1, des2):
+    import cv2
+    import drawMatches as dm
     # BFMatcher with default params
     bf = cv2.BFMatcher()
 
@@ -43,9 +45,4 @@ def matcher(kp1, kp2, des1, des2):
 
 
     # cv2.drawMatchesKnn expects list of lists as matches.
-    img3 = dm.drawMatches(img1,kp1,img2,kp2,good)
-
-    #plt.imshow(img3),plt.show()
-    print len(good), len(des1)
-    cv2.imwrite('match.jpg',img3)
-    
+    return good
