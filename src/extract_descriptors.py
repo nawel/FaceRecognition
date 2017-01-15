@@ -28,4 +28,24 @@ def extract_surf(path, hessian=50, octave=4, octaveLayers=2, ext=False):
     kp, des = surf.detectAndCompute(img,None)
     
     return kp,des
+
+def matcher(kp1, kp2, des1, des2):
+    # BFMatcher with default params
+    bf = cv2.BFMatcher()
+
+    matches = bf.knnMatch(des1,des2, k=2)
+
+    # Apply ratio test
+    good = []
+    for m,n in matches:
+        if m.distance < 0.75*n.distance:
+            good.append([m])
+
+
+    # cv2.drawMatchesKnn expects list of lists as matches.
+    img3 = dm.drawMatches(img1,kp1,img2,kp2,good)
+
+    #plt.imshow(img3),plt.show()
+    print len(good), len(des1)
+    cv2.imwrite('match.jpg',img3)
     
