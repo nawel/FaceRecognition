@@ -6,6 +6,7 @@ __author__ = "Nawel Medjkoune, Fella Belkham"
 
 
 import cv2 
+import numpy as np
 
 def gaussian_blur(img,kernel=(5,5)):
     """
