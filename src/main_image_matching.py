@@ -1,6 +1,8 @@
 """
 FaceRecognition - Main image matching 
 
+This code aims to reproduce the first part of our experiments: Features matching across different facile expression and configuration
+Dataset used: Yale, subject 9
 """
 __author__ = "Nawel Medjkoune, Fella Belkham"
 
@@ -20,8 +22,8 @@ files=['happy', 'sad', 'sleepy', 'wink','surprised','glasses', 'centerlight', 'l
 
 saved_surf=[]
 for f in files:
-    path1='subject9/subject09.normal.png'
-    path2='subject9/subject09.'+f+'.png'
+    path1='../Dataset/subject9/subject09.normal.png'
+    path2='../Dataset/subject9/subject09.'+f+'.png'
 
     savename='surf_'+f+'.png'
 
@@ -51,8 +53,8 @@ pickle.dump(saved_surf,open("saved_surf", "wb"))
 
 saved_sift=[]
 for f in files:
-    path1='subject9/subject09.normal.png'
-    path2='subject9/subject09.'+f+'.png'
+    path1='../Dataset/subject9/subject09.normal.png'
+    path2='../Dataset/subject9/subject09.'+f+'.png'
 
     savename='sift_'+f+'.png'
 
