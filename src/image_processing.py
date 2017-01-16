@@ -1,7 +1,16 @@
+"""
+FaceRecognition - Image processing
+
+"""
+__author__ = "Nawel Medjkoune, Fella Belkham"
+
+
 import cv2 
 
-#gaussian blur
-def gaussian_vlur(img,kernel=(5,5)):
+def gaussian_blur(img,kernel=(5,5)):
+    """
+    applied gaussian blur
+    """
     return cv2.GaussianBlur(img,kernel,0) 
 
 def median_blur(img,kernel=5):
