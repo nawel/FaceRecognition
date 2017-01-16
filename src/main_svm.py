@@ -1,3 +1,11 @@
+
+"""
+FaceRecognition - Main SVM
+
+"""
+__author__ = "Nawel Medjkoune, Fella Belkham"
+
+
 from __future__ import division
 from DataSet import LabelData
 from extract_descriptors import extract_sift
