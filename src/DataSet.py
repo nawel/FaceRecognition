@@ -7,7 +7,8 @@ import random
    Input: Name of the database, either ORL or Shuffield, note that both 
    Output: Train set and test set
    
-   Description: The function retreive the images from each ind
+   Description: The function retreive the images from each folder, labled the images of the same person with the same label, 
+                split the images randomly to train and test set.
    
 """
 def LabelData(dataset):
