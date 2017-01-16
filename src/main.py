@@ -64,6 +64,7 @@ for fnc in listFunctions:
             real_label = img[1]
             im=cv2.imread(img[0])
             im = globals()[fnc](im)
+            im=im.astype('uint8') 
             kp, des = extract_sift(im)
             pred = svm.predict(des)
             counts = np.bincount(pred)
@@ -131,6 +132,7 @@ for fnc in listFunctions:
             real_label = img[1]
             im=cv2.imread(img[0])
             im = globals()[fnc](im)
+            im=im.astype('uint8') 
             kp, des = extract_surf(im)
             pred = svm.predict(des)
             counts = np.bincount(pred)
